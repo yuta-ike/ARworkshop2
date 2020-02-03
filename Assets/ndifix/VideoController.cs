@@ -6,52 +6,48 @@ using UnityEngine.Video;
 public class VideoController : MonoBehaviour
 {
     VideoPlayer vPlayer;
+    MeshRenderer mRenderer;
     // Start is called before the first frame update
     void Start()
     {
         vPlayer = GetComponent<VideoPlayer>();
+        mRenderer = GetComponent<MeshRenderer>();
+        vPlayer.enabled = true;
+        mRenderer.enabled = true;
+        Play();Pause();
     }
-
-    private char c;
     // Update is called once per frame
     void Update()
     {
+        //表示・非表示
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SwitchDisplay();
+        }
+
+
+        //再生停止
         if (Input.GetKey(KeyCode.P))
         {
-            //play
-            VideoControll('p');
+            Play();
         }
         if (Input.GetKey(KeyCode.S))
         {
-            //stop
-            VideoControll('s');
+            Stop();
         }
         if (Input.GetKey(KeyCode.A))
         {
-            //pause
-            VideoControll('a');
+            Pause();
         }
     }
-    void VideoControll(char c)
-    {
-        //p stands for play
-        if (c == 'p')
-        {
-            vPlayer.Play();
-            return;
-        }
+    public void Play(){ vPlayer.Play(); }
+    public void Stop(){ vPlayer.Stop(); }
+    public void Pause(){ vPlayer.Pause(); }
 
-        //s stands for stop
-        if (c == 's')
-        {
-            vPlayer.Stop();
-            return;
-        }
-        //a stands for pause
-        if (c == 'a')
-        {
-            vPlayer.Pause();
-            return;
-        }
+    public void SwitchDisplay()
+    {
+        mRenderer.enabled ^= true;
+        vPlayer.enabled ^= true;
+        if (vPlayer.enabled) { Play();Pause(); }
     }
 }

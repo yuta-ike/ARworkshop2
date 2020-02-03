@@ -1,18 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class AppManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private ReactiveProperty<SceneTypes> currScene = new ReactiveProperty<SceneTypes>(SceneTypes.ModelViewer);
+    public IReadOnlyReactiveProperty<SceneTypes> CurrScene => currScene;
+
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void ShowVideo()
     {
-        
+        currScene.Value = SceneTypes.Video;
+    }
+
+    void ShowDocument()
+    {
+        currScene.Value = SceneTypes.Document;
+    }
+
+    void ShowModelViewer()
+    {
+        currScene.Value = SceneTypes.ModelViewer;
     }
 }

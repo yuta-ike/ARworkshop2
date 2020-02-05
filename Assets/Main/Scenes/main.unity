@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 14416680}
   - component: {fileID: 14416679}
   m_Layer: 0
-  m_Name: Text (TMP) (2)
+  m_Name: 'Text (TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,7 +149,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14416677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.2, y: 0.66666657, z: 1}
   m_Children: []
   m_Father: {fileID: 1846787804}
@@ -386,7 +386,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 167630278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.2, y: 0.66666657, z: 1}
   m_Children: []
   m_Father: {fileID: 1441192402}
@@ -1014,9 +1014,10 @@ GameObject:
   - component: {fileID: 1441192401}
   - component: {fileID: 1441192400}
   - component: {fileID: 1441192399}
+  - component: {fileID: 1441192403}
   m_Layer: 0
   m_Name: ButtonTop
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1097,6 +1098,19 @@ Transform:
   m_Father: {fileID: 59973984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1441192403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441192398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203dd0a19a39e44f3ab3310459b2cd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
 --- !u!1 &1543687595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,7 +1124,7 @@ GameObject:
   - component: {fileID: 1543687597}
   - component: {fileID: 1543687596}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Model1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1201,6 +1215,7 @@ GameObject:
   - component: {fileID: 1547768053}
   - component: {fileID: 1547768052}
   - component: {fileID: 1547768051}
+  - component: {fileID: 1547768054}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1256,6 +1271,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547768054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547768050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a2624d183f1b4aeb8c0cd2d1e1ee002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1623496537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1297,7 @@ GameObject:
   - component: {fileID: 1623496540}
   - component: {fileID: 1623496539}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: 'Text (TMP) '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,7 +1311,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623496537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.2, y: 0.66666657, z: 1}
   m_Children: []
   m_Father: {fileID: 2004446666}
@@ -1472,9 +1499,10 @@ GameObject:
   - component: {fileID: 1846787807}
   - component: {fileID: 1846787806}
   - component: {fileID: 1846787805}
+  - component: {fileID: 1846787808}
   m_Layer: 0
   m_Name: ButtonBottom
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1555,6 +1583,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846787803}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1846787808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846787803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203dd0a19a39e44f3ab3310459b2cd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
 --- !u!1 &2004446665
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,9 +1608,10 @@ GameObject:
   - component: {fileID: 2004446669}
   - component: {fileID: 2004446668}
   - component: {fileID: 2004446667}
+  - component: {fileID: 2004446670}
   m_Layer: 0
   m_Name: ButtonMiddle
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1650,6 +1692,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004446665}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2004446670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004446665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203dd0a19a39e44f3ab3310459b2cd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
 --- !u!1 &2017424497
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,23 +8,18 @@ public class AppManager : MonoBehaviour
     private ReactiveProperty<SceneTypes> currScene = new ReactiveProperty<SceneTypes>(SceneTypes.ModelViewer);
     public IReadOnlyReactiveProperty<SceneTypes> CurrScene => currScene;
 
-    void Start()
+    void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
 
-    }
-
-    void ShowVideo()
-    {
-        currScene.Value = SceneTypes.Video;
-    }
-
-    void ShowDocument()
-    {
-        currScene.Value = SceneTypes.Document;
-    }
-
-    void ShowModelViewer()
-    {
-        currScene.Value = SceneTypes.ModelViewer;
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                UIPanel uipanel = hit.collider.gameObject.GetComponent<UIPanel>();
+                currScene.Value = uipanel.Type;
+            }
+        }
     }
 }

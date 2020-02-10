@@ -21,15 +21,18 @@ public class ModelChangeMng : MonoBehaviour
     }
 
     // Update is called once per frame
+    // テスト用なので実際に使うときは変更してね
     void Update()
     {
+        int next = (now_model + 1) % models.Length;
+
         if (Input.GetMouseButtonDown(0))
         {
-            ChangeModel(1);
+            ChangeModel(next);
         }
         if (Input.GetMouseButtonUp(0))
         {
-            ChangeModel(0);
+            ChangeModel(next);
         }
         
     }

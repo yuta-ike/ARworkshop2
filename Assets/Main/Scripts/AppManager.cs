@@ -5,8 +5,8 @@ using UniRx;
 
 public class AppManager : MonoBehaviour
 {
-    private static ReactiveProperty<SceneTypes> currScene = new ReactiveProperty<SceneTypes>(SceneTypes.ModelViewer);
-    public static IReadOnlyReactiveProperty<SceneTypes> CurrScene => currScene;
+    private static ReactiveProperty<(SceneTypes type, int count)> currScene = new ReactiveProperty<(SceneTypes type, int count)>((type: SceneTypes.ModelViewer, count:0));
+    public static IReadOnlyReactiveProperty<(SceneTypes type, int count)> CurrScene => currScene;
 
     void Update()
     {
@@ -20,7 +20,14 @@ public class AppManager : MonoBehaviour
                 UIPanel uipanel = hit.collider.gameObject.GetComponent<UIPanel>();
                 if (uipanel != null)
                 {
-                    currScene.Value = uipanel.Type;
+                    if (uipanel.Type == currScene.Value.type)
+                    {
+                        currScene.Value = (type: uipanel.Type, count: currScene.Value.count + 1);
+                    }
+                    else
+                    {
+                        currScene.Value = (type: uipanel.Type, count: 0);
+                    }
                 }
             }
         }

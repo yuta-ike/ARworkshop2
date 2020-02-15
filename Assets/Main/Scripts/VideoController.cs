@@ -7,7 +7,7 @@ public class VideoController : MonoBehaviour
 {
     VideoPlayer vPlayer;
     MeshRenderer mRenderer;
-    // Start is called before the first frame update
+
     void Start()
     {
         vPlayer = GetComponent<VideoPlayer>();
@@ -15,8 +15,9 @@ public class VideoController : MonoBehaviour
         vPlayer.enabled = true;
         mRenderer.enabled = true;
         Play();Pause();
+        Debug.Log("Start");
     }
-    // Update is called once per frame
+
     void Update()
     {
         //表示・非表示
@@ -40,6 +41,7 @@ public class VideoController : MonoBehaviour
             Pause();
         }
     }
+
     public void Play(){ vPlayer.Play(); }
     public void Stop(){ vPlayer.Stop(); }
     public void Pause(){ vPlayer.Pause(); }

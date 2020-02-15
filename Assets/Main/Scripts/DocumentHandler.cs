@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
-public class SceneController : MonoBehaviour
+public class DocumentHandler : MonoBehaviour
 {
     [SerializeField]
     private SceneTypes sceneType;
@@ -11,20 +11,14 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         AppManager.CurrScene.Subscribe(currScene => { 
-            if(currScene == sceneType)
+            if(currScene.type == sceneType)
             {
-                GetComponent<Renderer>().enabled = true;
+                gameObject.SetActive(true);
             }
             else
             {
-                GetComponent<Renderer>().enabled = false;
+                gameObject.SetActive(false);
             }
         });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

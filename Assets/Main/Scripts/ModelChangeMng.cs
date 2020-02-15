@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class ModelChangeMng : MonoBehaviour
 {
+    [SerializeField]
+    private SceneTypes sceneType;
+
     //modelsには、同時に出現させたいやつをまとめて空オブジェクトの子とかにしてその空オブジェクトをいれる
     [SerializeField]
-    private GameObject[] models;
+    //Type制限
+    private ModelBhv[] models;
 
     [SerializeField]
     private int init_model;
@@ -18,38 +23,31 @@ public class ModelChangeMng : MonoBehaviour
     void Start()
     {
         now_model = init_model;
+        foreach (ModelBhv model in models)
+        {
+            model.Hide();
+        }
+
+        AppManager.CurrScene.Subscribe(currScene => {
+            if (currScene.type == sceneType)
+            {
+                gameObject.SetActive(true);
+
+                //ゼロ除算
+                int next = currScene.count % models.Length;
+                ChangeModel(next);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        });
     }
 
-    // Update is called once per frame
-    // テスト用なので実際に使うときは変更してね
-    void Update()
+    public void ChangeModel(int next)
     {
-        int next = (now_model + 1) % models.Length;
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            ChangeModel(next);
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            ChangeModel(next);
-        }
-        
-    }
-
-    //boolにしてもいいけど意味なさげ
-    public void ChangeModel(int model_num)
-    {
-        //いらんかった
-        if (models[now_model].GetComponent<ModelBhv>().Hide())
-        {
-            
-        }
-
-        
-        if (models[model_num].GetComponent<ModelBhv>().Show())
-        {
-            now_model = model_num;
-        }
+        models[now_model].Hide();
+        models[next].Show();
+        now_model = next;
     }
 }

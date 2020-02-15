@@ -14,6 +14,7 @@ public class VideoHandler : MonoBehaviour
         bool onPlay = false;
 
         AppManager.CurrScene.Subscribe(currScene => {
+            /*ここを記述*/
             if (currScene.type == sceneType)
             {
                 gameObject.SetActive(true);
@@ -34,6 +35,7 @@ public class VideoHandler : MonoBehaviour
                 vController.Pause();
                 onPlay = false;
             }
+            /*ここまで*/
         });
     }
 }

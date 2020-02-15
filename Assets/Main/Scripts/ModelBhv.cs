@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*ここから記述してもらう*/
 public class ModelBhv : MonoBehaviour
 {
     void Update()
@@ -36,3 +37,4 @@ public class ModelBhv : MonoBehaviour
         }
     }
 }
+/*ここまで*/

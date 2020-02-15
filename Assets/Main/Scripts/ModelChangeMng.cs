@@ -14,21 +14,24 @@ public class ModelChangeMng : MonoBehaviour
     private ModelBhv[] models;
 
     [SerializeField]
-    private int init_model;
+    private int initModelID;
 
-    private int now_model;
+    private int currModelID;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        now_model = init_model;
+        /*ここを記述*/
+        currModelID = initModelID;
         foreach (ModelBhv model in models)
         {
             model.Hide();
         }
+        /*ここまで*/
 
         AppManager.CurrScene.Subscribe(currScene => {
+            /*ここを記述*/
             if (currScene.type == sceneType)
             {
                 gameObject.SetActive(true);
@@ -41,13 +44,14 @@ public class ModelChangeMng : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+            /*ここまで*/
         });
     }
 
     public void ChangeModel(int next)
     {
-        models[now_model].Hide();
+        models[currModelID].Hide();
         models[next].Show();
-        now_model = next;
+        currModelID = next;
     }
 }

@@ -10,7 +10,8 @@ public class DocumentHandler : MonoBehaviour
 
     void Start()
     {
-        AppManager.CurrScene.Subscribe(currScene => { 
+        AppManager.CurrScene.Subscribe(currScene => {
+            /*ここを記述*/
             if(currScene.type == sceneType)
             {
                 gameObject.SetActive(true);
@@ -19,6 +20,7 @@ public class DocumentHandler : MonoBehaviour
             {
                 gameObject.SetActive(false);
             }
+            /*ここまで*/
         });
     }
 }

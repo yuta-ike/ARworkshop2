@@ -1,4 +1,5 @@
-﻿public enum SceneTypes{
+﻿//このコードはコピペしてもらう
+public enum SceneTypes{
     ModelViewer,
     Video,
     Document,

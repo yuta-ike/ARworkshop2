@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//このコードはコピペしてもらう
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -20,26 +21,26 @@ public class VideoController : MonoBehaviour
 
     void Update()
     {
-        //表示・非表示
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SwitchDisplay();
-        }
+        ////表示・非表示
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    SwitchDisplay();
+        //}
 
 
-        //再生停止
-        if (Input.GetKey(KeyCode.P))
-        {
-            Play();
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            Stop();
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            Pause();
-        }
+        ////再生停止
+        //if (Input.GetKey(KeyCode.P))
+        //{
+        //    Play();
+        //}
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    Stop();
+        //}
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    Pause();
+        //}
     }
 
     public void Play(){ vPlayer.Play(); }

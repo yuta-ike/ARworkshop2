@@ -28,7 +28,12 @@ public class AppManager : MonoBehaviour
                 if (uipanel != null)
                 {
                     //totalCountを1増やす
+                    if (!datastore.ContainsKey(uipanel.Type))
+                    {
+                        datastore.Add(uipanel.Type, 0);
+                    }
                     datastore[uipanel.Type] += 1;
+
                     if (uipanel.Type == currScene.Value.type)
                     {
                         //カウントを1増やす

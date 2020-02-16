@@ -2169,7 +2169,7 @@ MonoBehaviour:
   - {fileID: 863236839}
   - {fileID: 858592045}
   - {fileID: 1707373509}
-  init_model: 0
+  initModelID: 0
 --- !u!1 &1846787803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2278,7 +2278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203dd0a19a39e44f3ab3310459b2cd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
+  Type: 2
 --- !u!1 &1915477989
 GameObject:
   m_ObjectHideFlags: 0
